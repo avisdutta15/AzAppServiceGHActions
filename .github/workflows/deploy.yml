@@ -28,3 +28,6 @@ jobs:
     - name: Install dependencies
       run: dotnet restore ./Catalog.API/Catalog.API.csproj
     
+    # Run dotnet build
+    - name: Build with dotnet
+      run: dotnet build ./Catalog.API/Catalog.API.csproj --configuration Release --no-restore
