@@ -31,3 +31,8 @@ jobs:
     # Run dotnet build
     - name: Build with dotnet
       run: dotnet build ./Catalog.API/Catalog.API.csproj --configuration Release --no-restore
+
+    # Run dotnet publish and store the artifacts in catalog/publish
+    - name: Publish
+      run: |
+        dotnet publish ./Catalog.API/Catalog.API.csproj --configuration Release --no-build --output 'catalog/publish'
