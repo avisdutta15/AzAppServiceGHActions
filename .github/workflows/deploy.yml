@@ -39,3 +39,11 @@ jobs:
     
     # Check File Structure
     - run: ls -R
+  
+    # Upload Artifacts
+    - name: Upload artifact for deployment job
+      uses: actions/upload-artifact@v4
+      with:
+        name: catalog-app
+        path: 'catalog/publish'      # The directory from where the artifact has to be uploaded.
+                                     # Since we published the output to catalog/publish, the package resides there.
