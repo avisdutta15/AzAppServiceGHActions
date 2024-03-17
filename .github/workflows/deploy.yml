@@ -36,3 +36,6 @@ jobs:
     - name: Publish
       run: |
         dotnet publish ./Catalog.API/Catalog.API.csproj --configuration Release --no-build --output 'catalog/publish'
+    
+    # Check File Structure
+    - run: ls -R
