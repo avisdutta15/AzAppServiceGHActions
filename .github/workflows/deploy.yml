@@ -1,0 +1,10 @@
+name: Build and Publish .NET Application to App Service
+
+on:
+    workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    
