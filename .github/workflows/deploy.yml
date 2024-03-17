@@ -19,8 +19,12 @@ jobs:
     - name: Setup .NET 
       uses: actions/setup-dotnet@v4
       with:
-        dotnet_version: ${{env.DOTNET_VERSION}}
+        dotnet-version: ${{env.DOTNET_VERSION}}
 
     # Check File Structure
     - run: ls -R
+  
+    # Restore dependencies
+    - name: Install dependencies
+      run: dotnet restore ./Catalog.API.csproj
     
