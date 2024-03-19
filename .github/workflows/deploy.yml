@@ -50,7 +50,7 @@ jobs:
 
   deploy-to-dev:
     runs-on: ubuntu-latest
-    
+    environment: Dev
     needs: [build]
     
     steps:
@@ -64,3 +64,17 @@ jobs:
 
     # Check Directory Structure
     - run: ls -R
+  
+    # Login to Azure
+    - name: Az CLI Login via OIDC
+      uses: azure/login@v1
+      with:
+        client-id: ${{ secrets.AZURE_CLIENT_ID }}                   #Environment specific
+        tenant-id: ${{ secrets.AZURE_TENANT_ID }}                   #Repository specific 
+        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}       #Repository specific
+    
+    # Test step to check if az login worked
+    - name: Run Az Commands
+      run: |
+        az account show
+        az group list
