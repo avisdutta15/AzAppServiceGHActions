@@ -81,3 +81,15 @@ jobs:
       run: |
         az account show
         az group list
+
+    # Deploy to Azure Web apps
+    - name: 'Run Azure webapp deploy action using OIDC credentials'
+      uses: azure/webapps-deploy@v3
+      with: 
+        app-name: AzAppServiceGHActions-WebApp                 # Replace with your app name
+        package: './publish'                                   # Path where the package resides
+
+    # Logout from Azure
+    - name: Logout from Azure
+      run: |
+        az logout
