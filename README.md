@@ -1,12 +1,12 @@
 # AzAppServiceGHActions
 A small PoC to showcase how to deploy .net application to Azure App Service using GitHub Actions.
 
-Prerequisits:
+    Prerequisits:
     1. You have already created a repository.
     2. The repository is cloned locally.
     3. A .NET Core WebAPI application is created, commited and pushed to the repo.
 
-Steps:
+    Steps:
     1. Create an App Registration in Azure.
         a. Goto Microsoft Entra ID -> App Registrations -> (+ New Registration)
         b. Give the name as github-workflow-oidc-demo.
