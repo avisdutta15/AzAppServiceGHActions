@@ -86,7 +86,7 @@ jobs:
     - name: 'Run Azure webapp deploy action using OIDC credentials'
       uses: azure/webapps-deploy@v3
       with: 
-        app-name: AzAppServiceGHActions-WebApp                 # Replace with your app name
+        app-name: githubactionsdemoapp                         # Replace with your app name
         package: './publish'                                   # Path where the package resides
 
     # Logout from Azure
